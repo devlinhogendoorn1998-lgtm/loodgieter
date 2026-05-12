@@ -3,75 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusief Loodgieterswerk | Meesterschap in Techniek</title>
+    <title>Luxe Plumbing | Meesterschap in Techniek</title>
+    <meta name="description" content="Exclusief loodgieterswerk en technisch design. Van luxe badkamerinstallaties tot duurzame energiesystemen.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
+    <nav class="glass-nav" id="main-nav">
         <div class="logo">LUXE<span>PLUMBING</span></div>
+        <div class="nav-links">
+            <a href="#over-ons">Over Ons</a>
+            <a href="#portfolio">Projecten</a>
+            <a href="#contact" class="btn-cta">Direct Contact</a>
+        </div>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
     </nav>
 
-    <header>
+    <!-- Mobiel menu -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Navigatiemenu">
+        <a href="#over-ons" class="mob-link">Over Ons</a>
+        <a href="#portfolio" class="mob-link">Projecten</a>
+        <a href="#contact" class="mob-cta">Direct Contact</a>
+    </div>
+
+    <header class="hero-premium">
+        <div class="hero-bg-overlay"></div>
         <div class="hero-content">
-            <h1>Vakmanschap met een Gouden Rand</h1>
-            <p>Voor de opdrachtgever die geen genoegen neemt met minder dan perfectie.</p>
+            <span class="tagline">Gecertificeerd Meesterschap</span>
+            <h1>Techniek met een <br><span class="gold-text">Gouden Rand.</span></h1>
+            <p>Wij realiseren technische installaties voor de meest veeleisende interieurs. Esthetiek ontmoet functionaliteit.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-primary">Offerte Aanvragen</a>
+                <a href="#over-ons" class="btn-secondary">Over Ons</a>
+            </div>
         </div>
     </header>
 
-    <section class="portfolio">
-        <h2>Onze Meesterwerken</h2>
-        <div class="grid">
-            <div class="card">
-                <img src="images/1.jpg" alt="Exclusief project 1">
-                <div class="overlay"><span>Project Design #01</span></div>
+    <!-- USP diensten balk -->
+    <div class="diensten-balk">
+        <div class="dienst-item">
+            <span class="dienst-icon">🔧</span>
+            <h3>Sanitair</h3>
+            <p>Badkamer- en keukeninstallaties op maat, van A tot Z.</p>
+        </div>
+        <div class="dienst-item">
+            <span class="dienst-icon">🔥</span>
+            <h3>Verwarming</h3>
+            <p>CV-ketels, vloerverwarming en hybride warmtepompen.</p>
+        </div>
+        <div class="dienst-item">
+            <span class="dienst-icon">💧</span>
+            <h3>Lekkage &amp; Spoed</h3>
+            <p>24/7 bereikbaar voor acute lekkageherstel en storingen.</p>
+        </div>
+        <div class="dienst-item">
+            <span class="dienst-icon">🏠</span>
+            <h3>Onderhoud</h3>
+            <p>Preventief onderhoud voor woningen en vastgoedbeheer.</p>
+        </div>
+    </div>
+
+    <!-- Over Ons -->
+    <section id="over-ons" class="over-ons">
+        <div class="over-ons-inner">
+            <div class="over-ons-visual">
+                <!-- Vervang src met een echte foto van de loodgieter / werkzaamheden -->
+                <img src="images/1.jpg" alt="Onze meester-loodgieter aan het werk" class="over-ons-img">
             </div>
-            <div class="card">
-                <img src="images/1.jpg" alt="Exclusief project 2">
-                <div class="overlay"><span>Project Design #02</span></div>
-            </div>
-            <div class="card">
-                <img src="images/1.jpg" alt="Exclusief project 3">
-                <div class="overlay"><span>Project Design #03</span></div>
+            <div class="over-ons-text">
+                <span class="over-ons-keurmerk">✦ Erkend Installateur</span>
+                <h2>Vakmanschap <br><span>Dat Spreekt</span></h2>
+                <p>
+                    Luxe Plumbing is een erkend installatiebedrijf actief in de regio Baarn, Hilversum, Soest en Laren.
+                    Onze meester-loodgieters hebben jarenlange ervaring in zowel nieuwbouw als renovatieprojecten.
+                    Wij werken uitsluitend met A-merk materialen en leveren werk dat de tand des tijds doorstaat.
+                </p>
+                <p>
+                    Van een simpele lekkage tot de complete installatie van een luxe badkamer of energiezuinig verwarmingssysteem —
+                    wij denken met u mee en ontzorgen u van begin tot einde. Kwaliteit en eerlijkheid staan bij ons voorop.
+                </p>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span class="stat-num">15+</span>
+                        <span class="stat-label">Jaar Ervaring</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">400+</span>
+                        <span class="stat-label">Projecten</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">24/7</span>
+                        <span class="stat-label">Bereikbaar</span>
+                    </div>
+                </div>
+                <a href="#contact" class="btn-primary" style="align-self:flex-start; margin-top:0.5rem;">Neem Contact Op</a>
             </div>
         </div>
     </section>
 
-   <section class="mail-contact">
-    <div class="contact-header">
-        <h2>Project Aanvragen</h2>
-        <p>Laat uw gegevens achter voor een vrijblijvende offerte op maat.</p>
-    </div>
-    <form action="mailto:info@luxe-plumbing.nl" method="post" enctype="text/plain">
-        <div class="form-group">
-            <input type="text" placeholder="Naam" required>
-            <input type="email" placeholder="E-mailadres" required>
+    <section id="portfolio" class="portfolio-luxe">
+        <div class="section-heading">
+            <h2>Onze <span>Meesterwerken</span></h2>
+            <div class="divider"></div>
         </div>
-        <textarea placeholder="Uw bericht of projectomschrijving" rows="5"></textarea>
-        <button type="submit">Verstuur Aanvraag</button>
-    </form>
-</section>
-
-<footer>
-    <div class="footer-content">
-        <div class="footer-logo">LUXE<span>PLUMBING</span></div>
-        <div class="footer-details">
-            <p><strong>E-mail:</strong> info@luxe-plumbing.nl</p>
-            <p><strong>Tel:</strong> +31 (0)6 12345678</p>
+        <div class="grid">
+            <div class="card">
+                <img src="images/1.jpg" alt="Design Badkamer #01" loading="lazy">
+                <div class="card-overlay">
+                    <span>Design Badkamer #01</span>
+                    <p>Marmer & Koper Afwerking</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/1.jpg" alt="Duurzame Systemen #02" loading="lazy">
+                <div class="card-overlay">
+                    <span>Smart Heating #02</span>
+                    <p>Hybride Warmtepompen</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/1.jpg" alt="Exclusief Onderhoud #03" loading="lazy">
+                <div class="card-overlay">
+                    <span>Vastgoed Beheer #03</span>
+                    <p>Preventief Onderhoud</p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-    <p>&copy; 2026 Luxe Plumbing — Meesterschap in elk detail.</p>
-    <p class="designer-link">
-        Exclusieve realisatie door: 
-        <a href="https://ttdigitaldesign.nl" target="_blank">ttdigitaldesign.nl</a>
-    </p>
-</div>
-</footer>
+    </section>
 
-<a href="https://wa.me/31612345678" class="whatsapp-btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
+    <section id="contact" class="mail-contact">
+        <div class="contact-box">
+            <div class="contact-header">
+                <h2>Project <span>Aanvragen</span></h2>
+                <p>Selecteer uw specialisme voor een voorstel op maat.</p>
+            </div>
+            
+            <form id="luxeForm">
+                <div class="form-row">
+                    <input type="text" placeholder="Volledige Naam" required>
+                    <input type="email" placeholder="E-mailadres" required>
+                </div>
+                
+                <div class="service-selector">
+                    <label>Wat voor project betreft het?</label>
+                    <div class="radio-group">
+                        <label class="radio-btn">
+                            <input type="radio" name="service" value="badkamer" checked>
+                            <span>Keuken of Badkamer</span>
+                        </label>
+                         <label class="radio-btn">
+                            <input type="radio" name="service" value="compleet">
+                            <span>Compleet Huis</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="service" value="verwarming">
+                            <span>Verwarming</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="service" value="service">
+                            <span>Service & Onderhoud</span>
+                        </label>
+                    </div>
+                </div>
 
+                <textarea placeholder="Omschrijf uw project of uitdaging..." rows="5"></textarea>
+                <button type="submit" class="btn-submit">Aanvraag Verzenden</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-logo">LUXE<span>PLUMBING</span></div>
+            <div class="footer-info">
+                <p>Baarn • Hilversum • Soest • Laren</p>
+                <p>+31 (0)6 12345678 | info@luxe-plumbing.nl</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Luxe Plumbing — Realisatie door <a href="https://ttdigitaldesign.nl">TT Digital Design</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/31612345678" class="whatsapp-btn" aria-label="WhatsApp Contact">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="script.js"></script>
 </body>
 </html>

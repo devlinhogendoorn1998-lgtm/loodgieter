@@ -1,47 +1,69 @@
-// Interactiviteit sectie
+// Section // Formulier, Hamburger & Scroll Logica
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // Smooth scroll voor navigatie (indien nodig)
-    const cards = document.querySelectorAll('.card');
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translateY(0)";
-            }
+
+    // ── Hamburger menu ────────────────────────────────────────────────────────
+    const hamburger  = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function openMenu() {
+        mobileMenu.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Menu sluiten');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Menu openen');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            mobileMenu.classList.contains('open') ? closeMenu() : openMenu();
         });
-    }, { threshold: 0.1 });
 
-    cards.forEach(card => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = "all 0.6s ease-out";
-        observer.observe(card);
-    });
+        // Sluit bij klik op link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
 
-    // Formulier validatie placeholder
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Bedankt! Uw aanvraag voor meesterschap is verzonden.');
-        form.reset();
-    });
-});
-// Formulier en Footer logica sectie
-document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('form');
+        // Sluit bij Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+    }
 
-    contactForm.addEventListener('submit', (e) => {
-        const emailInput = document.querySelector('input[type="email"]').value;
-        const nameInput = document.querySelector('input[type="text"]').value;
-
-        if (nameInput === "" || emailInput === "") {
-            e.preventDefault();
-            alert("Zorg dat alle verplichte velden goudomrand zijn ingevuld.");
-        } else {
-            console.log("Formulier wordt verzonden door: " + nameInput);
-            // Hier kun je eventueel een succes-melding tonen na verzending
+    // ── Navigatie scroll effect ────────────────────────────────────────────────
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        if (nav) {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
         }
-    });
+    }, { passive: true });
+
+    // ── Formulier ────────────────────────────────────────────────────────────
+    const luxeForm = document.getElementById('luxeForm');
+    if (luxeForm) {
+        luxeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const submitBtn = e.target.querySelector('.btn-submit');
+            submitBtn.textContent = 'AANVRAAG VERZENDEN...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                submitBtn.textContent = '\u2713 AANVRAAG ONTVANGEN';
+                submitBtn.style.background = '#4a7c59';
+                luxeForm.reset();
+                setTimeout(() => {
+                    submitBtn.textContent = 'AANVRAAG VERZENDEN';
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 4000);
+            }, 1500);
+        });
+    }
+
 });
